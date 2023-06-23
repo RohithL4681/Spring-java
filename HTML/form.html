@@ -1,0 +1,162 @@
+<html>
+<head>
+<title>Personal Details</title>
+<script>
+function validation(){
+
+ var fn=document.getElementById("fname").value;
+ var ln=document.getElementById("lname").value;
+ var un=document.getElementById("uname").value;
+ var pd=document.getElementById("pswd").value;
+ var cpd=document.getElementById("confpswd").value;
+ var email=document.getElementById("em").value;
+email=email.toLowerCase();
+var dob=document.getElemenrById("birthdate").value;
+var phno=document.getElementById("ph").value;
+ var reg=/^[a-zA-Z]*$/.test(fn);
+ if((fn=="null"||fn==""|| !reg)){
+ alert("Enter ur first name and please dont include any numbers and special characters");
+ return false;}
+ else if((ln=="null"||ln==""|| !reg)){
+ alert("Enter ur last name and please dont include any numbers and special characters");
+ return false;
+
+}
+ else if((un=="null"||un==""|| /^[0-9]*$/.test(un))||/\s/.test(un)){
+ alert("Enter ur user name and please dont include any spaces or special characters");
+ return false;}
+ else if(!passwordvalidation(pd))
+ return false;
+else if(pd != cpd){
+alert("Password is not matched,Incorrect Password");
+ return false;
+}
+else if(!(/^[a-z][a-z0-9]*[@][a-z]*[.][a-z]*$/.test(email))){
+alert("Please enter the correct email format");
+return false;          
+}
+else if(!validateDob){
+return false;
+}
+else if(!validateNumber){
+return false;
+}
+}
+function passwordvalidation(){
+ if(ps1 == ""){
+            alert("Please enter a password");
+            return false;
+         }
+         else if(ps1.length<8 || ps1.length>12){
+            alert("length has been excedded");
+            return false;
+         }
+         else if(!(/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,12}$/.test(pd))){
+            alert("The password should contain atleast one Capital character,one special characterc,and one number");
+            return false;
+         }
+        else{
+         return true;
+        }
+}
+
+function validateDob(dob){
+         var year=date.substring(0,4);
+         const cudate=new Date();
+         var cuyear=cudate.getFullYear();
+         if(year >= cuyear){
+            alert("Invalid DOB,please enter the correct date of birth");
+            return false;
+         }
+         else{
+            return true;
+         }
+      }
+      function validateNumber(){
+      
+      if(ph.length==10){
+      if(/^[6-9][0-9]*$/.test(ph)){
+      return false;
+      else{
+      alert("pls start number with 6 or 7 or 8 or 9");
+      return false;
+      }
+      else{
+      alert("Invalid phone number");
+      }
+      }
+</script>
+</head>
+<body>
+<form action="login.html">
+<h3><b>Personal Details</b></h3>
+<label>FirstName:</label>
+<input type="text" placeholder="FirstName" id="fname"><br>
+<br>
+
+<label>LastName:</label>
+<input type="text" placeholder="LastName" id="lname"><br><br>
+<label>UserName:</label>
+<input type="text" placeholder="UserName" id="uname"><br>
+<br>
+<label>Password:</label>
+<input type="password" placeholder="Password" id="pswd"><br>
+<br>
+<label>Confirm Password:</label>
+<input type="password" placeholder="Password" id="confpswd"><br>
+<br>
+<br><label>Gender:</label>
+<label>Male</label>
+<input type="radio" value="" id="m" required>
+<label>Female</label>
+<input type="radio" value="" id="f" required><br>
+
+<br><label>Email:</label>
+<input type="email" value="" id="mail"><br>
+<br><label>Date of Birth: </label>
+<input type="date" value=" "id="birthdate"><br>
+<br>
+<label>Phone Number:</label>
+<input type="Number" value="" id="ph"><br>
+<br>
+<label> Select your branch:</label>
+<select id="branch" required>
+<option value="cse">CSE</option>
+<option value="ece">ECE</option>
+<option value="mech">MECH</option>
+<option value="eee">EEE</option>
+<option value="civil">CIVIL</option>
+</select><br><br>
+<label>Skills:</label><br>
+<br>
+<input type="checkbox" >
+<label>HTML</label><br>
+<input type="checkbox" >
+<label>CSS</label><br>
+<input type="checkbox" >
+<label>JavaScript</label><br>
+<input type="checkbox" >
+<label>C</label><br>
+<input type="checkbox" >
+<label>C++</label><br>
+<input type="checkbox" >
+<label>Java</label><br>
+<input type="checkbox" >
+<label>Python</label><br>
+<input type="checkbox" >
+<label>MYSQL</label><br>
+<input type="checkbox" >
+<label>JDBC</label><br>
+<br>
+<label>Enter the pincode:</label>
+           <input type="number" maxlength="6" id="pin"><br><br>
+<label>Address:</label><br>
+<textarea rows="5" cols="30"></textarea>
+<br><br>
+
+<br>
+<input type="submit">
+<input type="reset">
+</form>
+</body>
+</html>

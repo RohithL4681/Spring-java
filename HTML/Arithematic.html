@@ -1,0 +1,53 @@
+<html>
+<head> 
+<title>
+Simple Arithematic Operations
+</title>
+<script>
+function add(){
+var a=getElementById("Num1").value();
+var b=getElementById("Num2").value();
+var c=a+b;
+conole.log(c);
+
+}
+function sub(){
+var a=getElementById("Num1").value();
+var b=getElementById("Num2").value();
+var c=a-b;
+document.write(c);
+}
+function mul(){
+var a=getElementById("Num1").value();
+var b=getElementById("Num2").value();
+var c=a*b;
+window.alert(c);
+}
+function div(){
+var a=getElementById("Num1").value();
+var b=getElementById("Num2").value();
+var c=a/b;
+window.alert(c);
+}
+</script>
+</head>
+<body>
+<form>
+<input type="number" placeholder="enter a number" id="Num1">
+<select>
+<option>-----Select one operation-----</option>
+<option>Addition </option>
+<option>Subtraction</option>
+<option>Multiplication</option>
+<option>Division</option>
+</select>
+<input type="number" placeholder="enter a number" id="Num2"><br><br>
+
+<input type="button"  value="click" onclick="add()">
+
+<input type="button" value="submit" onclick="sub()">
+<input type="button" value="click" onclick="mul()">
+<input type="button" value="submit" onclick="div()">
+</form>
+</body>
+</html>
